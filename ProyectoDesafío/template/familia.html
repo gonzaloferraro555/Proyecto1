@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Entregable</title>
+</head> Datos Familiares
+<br>
+<body>
+        {%for key in Familia%}
+            ******************
+            <br>        
+            <p style = "color: green">Nombre: {{key.nombre}}</p>
+            <br>
+            <p style = "color: green">Relación:{{key.relación}}</p>
+            <br>
+            <p style = "color: green">Fecha de Nacimiento:{{key.fechaDeNacimiento}}</p>
+            <br>
+            <p style = "color: green">Edad:{{key.Edad}}</p>
+            <br>
+        {%endfor%}
+</body>
+</html>
