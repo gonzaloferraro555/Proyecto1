@@ -8,6 +8,12 @@ from AppCoder.models import Curso,Familia
 def home(request,name):
     return HttpResponse(f'Hola, soy la página de {name}')
 
+def inicio(request):
+    planilla = loader.get_template('inicio.html')
+    documento = planilla.render()
+    return HttpResponse(documento)
+#Sin template.
+
 def homePage(self):
     planilla = loader.get_template('home.html')
     documento = planilla.render()
@@ -28,6 +34,10 @@ def cursos(self):
 
 def familia(self):
     Fam = Familia.objects.all()
+    #Traer la data de la DB implica traer objetos, por lo que el contenido
+    #del diccionario pasa a ser un conjunto de objetos que puedo iterar, y a cuya
+    #información puedo acceder como a la de cualquier objeto con el '.' para conocer
+    #sus "variables de instancia".
     dicc = {"Familia":Fam}
     #El contexto debe ser una lista, osea el data, o como quieras llamarlo.
     planilla = loader.get_template('familia.html')
